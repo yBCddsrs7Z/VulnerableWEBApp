@@ -16,7 +16,7 @@ $result=mysqli_query($db, $sql) or die('Error querying database.');
 ?>
 <html>
 <body>
-<h1>Welcome <?php echo $a; ?></h1>
+<h1>Welcome <?php echo $check; ?></h1>
 	<center>
 <h2>Profile picture</h2>
 <form method="POST" enctype="multipart/form-data">
@@ -31,7 +31,7 @@ require_once  "/bulletproof.php";
 $image = new Bulletproof\Image($_FILES);
 
 // To provide a name for the image. If unused, image name will be auto-generated.
-$image->setName($a);
+$image->setName($check);
 
 // To set the min/max image size to upload (in bytes)
 $image->setSize(5000, 10000);
@@ -43,7 +43,7 @@ $image->setMime(array('jpeg', 'gif'));
 $image->setDimension(128, 128);
 
 // To create a folder name to store the uploaded image, with optional chmod permission
-$image->setStorage('/avatars/'.$a, 600);
+$image->setStorage('/avatars/'.$check, 600);
 
 if($image["pictures"]){
   $upload = $image->upload(); 
@@ -58,7 +58,7 @@ if($image["pictures"]){
 		
 <h2>Profile settings</h2>
 <form action="profileupdate.php" method="POST">
-Username : <input type="text" name="username" disabled="" value="<?php echo $a; ?>"/> </br>
+Username : <input type="text" name="username" disabled="" value="<?php echo $check; ?>"/> </br>
 Email : <input type="email" name="email" value="<?php echo $row["email"]; ?>"></br>
 <input type="submit" name="update" value="update">
 </form>
@@ -66,7 +66,7 @@ Email : <input type="email" name="email" value="<?php echo $row["email"]; ?>"></
 </br>
 <h2> Change password </h2>
 <form action="changepassword.php" method="POST">
-Username : <input type="hidden" name="username"  value="<?php echo $a ;?>" </br>
+Username : <input type="hidden" name="username"  value="<?php echo $check ;?>" </br>
 Old Password : <input type="text" name="oldpassword" value="" > </br>
 New Password : <input type="text" name="newpassword" value="" > </br>
 <input type="submit" name="update" value="update">
@@ -75,7 +75,7 @@ New Password : <input type="text" name="newpassword" value="" > </br>
 </br>
 <h2> Delete account </h2>
 <form action="deleteaccount.php" method="POST">
-Username : <input type="hidden" name="username"  value="<?php echo $a ;?>" </br>
+Username : <input type="hidden" name="username"  value="<?php echo $check ;?>" </br>
 Old Password : <input type="text" name="oldpassword" value="" > </br>
 <input type="submit" name="update" value="update">
 </form>
