@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS 'role';
 CREATE TABLE IF NOT EXISTS 'role' (
   'role_id' int(11) NOT NULL AUTO_INCREMENT,
   'role_type' varchar(255) DEFAULT NULL,
-  PRIMARY KEY ('id')
+  PRIMARY KEY ('role_id')
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO 'role' ('role_id', 'role_type') VALUES
