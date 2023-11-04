@@ -5,12 +5,12 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS 'role';
 CREATE TABLE IF NOT EXISTS 'role' (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'role_id',
-  `role` varchar(255) DEFAULT NULL COMMENT 'role_text',
+  'role_id' int(11) NOT NULL AUTO_INCREMENT,
+  'role_type' varchar(255) DEFAULT NULL,
   PRIMARY KEY ('id')
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO 'role' ('id', 'role') VALUES
+INSERT INTO 'role' ('role_id', 'role_type') VALUES
 (1, 'Admin'),
 (2, 'User');
 
