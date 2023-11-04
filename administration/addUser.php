@@ -30,20 +30,12 @@ if (isset($userAdd)) {
 
             <form class="" action="" method="post">
                 <div class="form-group pt-3">
-                  <label for="name">Your name</label>
-                  <input type="text" name="name"  class="form-control">
-                </div>
-                <div class="form-group">
                   <label for="username">Your username</label>
                   <input type="text" name="username"  class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="email">Email address</label>
                   <input type="email" name="email"  class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="mobile">Mobile Number</label>
-                  <input type="text" name="mobile"  class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
@@ -54,9 +46,7 @@ if (isset($userAdd)) {
                     <label for="sel1">Select user Role</label>
                     <select class="form-control" name="roleid" id="roleid">
                       <option value="1">Admin</option>
-                      <option value="2">Editor</option>
-                      <option value="3">User only</option>
-
+                      <option value="2">User</option>
                     </select>
                   </div>
                 </div>
