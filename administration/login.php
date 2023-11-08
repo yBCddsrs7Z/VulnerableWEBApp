@@ -15,7 +15,7 @@ if (isset(($_GET['user_id']))) {
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
-   $userLogin = $users->userAuthentication($_POST);
+   $userLogin = $users->userAuthentication($user_id, $_POST);
 }
 if (isset($userLogin)) {
   echo $userLogin;
