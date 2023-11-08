@@ -155,7 +155,7 @@ class Users{
 
 
     // User Authentication Method
-    public function userAuthentication($user_id, $data){
+    public function userAuthentication($data){
       $email = $data['email'];
       $password = $data['password'];
 
@@ -174,7 +174,7 @@ class Users{
       }else{
 
         $loginResult = $this->userLoginInfo($email, $password);
-        $chkAdmin = $this->CheckAdminUser($user_id, $email);
+        $chkAdmin = $this->CheckAdminUser($loginResult->user_id, $email);
         $chkEnabled = $this->CheckEnabledUser($email);
 
         if ($chkAdmin == FALSE || $chkEnabled == FALSE) {
