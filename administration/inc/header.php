@@ -60,11 +60,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
 
           <?php if (Session::get('user_id') == TRUE) { ?>
-            <?php if ( Session::get('role_id') && $users->CheckAdminUser(Session::get("user_id")) ) { ?>
+            <?php if ( Session::get('role_id') === 1 && $users->CheckAdminUser(Session::get("user_id"), Session::get("email")) ) { ?>
               <li class="nav-item">
 
 
-                  <a class="nav-link" href="index.php"><i class="fas fa-users mr-2"></i>User lists </span></a>
+                  <a class="nav-link" href="index.php"><i class="fas fa-users mr-2"></i>Userlists </span></a>
               </li>
               <li class="nav-item
 
