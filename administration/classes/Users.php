@@ -132,7 +132,7 @@ class Users{
     return $stmt->fetch(PDO::FETCH_OBJ);
   }
 
-    // Check User Account admin status
+  // Check User Account admin status
   public function CheckAdminUser($user_id, $email){
     $sql = "SELECT * FROM user WHERE email = :email and role_id = :role_id LIMIT 1";
     $stmt = $this->db->pdo->prepare($sql);
@@ -142,7 +142,7 @@ class Users{
     $test1 = $stmt->fetch(PDO::FETCH_OBJ);
     $sql = "SELECT * FROM admin WHERE user_id = :user_id and isAdmin = :isAdmin LIMIT 1";
     $stmt = $this->db->pdo->prepare($sql);
-    $stmt->bindValue(':user_id, $user_id);
+    $stmt->bindValue(':user_id', $user_id);
     $stmt->bindValue(':isAdmin', 1);
     $stmt->execute();
     $test2 = $stmt->fetch(PDO::FETCH_OBJ);
