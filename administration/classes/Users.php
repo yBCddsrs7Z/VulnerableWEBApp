@@ -155,10 +155,9 @@ class Users{
 
 
     // User Authentication Method
-    public function userAuthentication($data){
+    public function userAuthentication($user_id, $data){
       $email = $data['email'];
       $password = $data['password'];
-
 
       $checkEmail = $this->checkExistsEmail($email);
 
