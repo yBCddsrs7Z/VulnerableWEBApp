@@ -6,6 +6,14 @@ Session::CheckLogin();
 
 <?php
 
+if (isset(($_GET['user_id']))) {
+  $user_id = preg_replace('/[^a-zA-Z0-9-]/', '', (int)$_GET['user_id']);
+  //if ((int)$_GET['user_id']){ 
+   //$user_id = (int)$_GET['user_id'];
+  // }
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
    $userLogin = $users->userAuthentication($_POST);
 }
